@@ -7,7 +7,6 @@ ui <- dashboardPage(
   dashboardSidebar(
     sidebarMenu(
       menuItem("Map Viewer", tabName = "map", icon = icon("globe")),
-      actionButton("update", "Update Map", icon = icon("refresh")),
       dateInput("date_selector", "Select Date", value = "2024-11-01", format = "yyyy-mm-dd"),
       checkboxInput("show_legend", "Show Legend", value = TRUE),
 
@@ -16,7 +15,8 @@ ui <- dashboardPage(
           margin-left: 20px;
         }
       ")),
-      downloadButton("download_nc", "Download NetCDF", icon = icon("download"))
+      downloadButton("download_nc", "Download NetCDF", icon = icon("download")),
+      submitButton("Update View", icon("refresh"))
     )
   ),
   dashboardBody(
