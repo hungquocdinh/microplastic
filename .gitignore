@@ -1,4 +1,5 @@
 ncdata/
+data/
 .DS_Store
 *.nc
 .Rproj.user
