@@ -10,8 +10,8 @@ ui <- dashboardPage(
       dateRangeInput("date_selector", "Select Date", format = "yyyy-mm-dd", start = "2024-11-01", end = "2024-11-03"),
       uiOutput("rangeSelector"),
       downloadButton("download_nc", "Download NetCDF", icon = icon("download")),
-      submitButton("Update View", icon("refresh"))
-    )
+      actionButton("apply_btn", "Apply", icon("refresh"))
+      )
   ),
   dashboardBody(
     tabItems(
@@ -24,9 +24,9 @@ ui <- dashboardPage(
             leafletOutput("raster_map", height = "600px")
           ),
           box(
-            title = "Legend",
+            title = "Plot",
             width = 12,
-            uiOutput("legend_ui")
+            plotOutput("plot")
           )
         )
       )

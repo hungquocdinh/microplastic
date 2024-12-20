@@ -35,7 +35,6 @@ pocloud.download <- function(
   m = month(date)
   y = year(date)
   
-  print(paste(d,m,y))
   #check exist
   lf = list.files(destination, pattern = ".nc", full.names = T)
   pattern = sprintf("s%.4d%.2d%.2d", y, m, d)
